@@ -32,3 +32,7 @@ recreate path
 - instantiate new path finder object
 - controller - gives knight a start and end destination
 - displays the shortest path
+
+tests
+- test set up, including create knight object and board
+- test pathfinder
