@@ -7,7 +7,7 @@
 # position.
 #
 # @example Create a new Knight
-# knight = Knight.new(start_position)
+# knight = Knight.new
 #
 class Knight
   attr_accessor :position
