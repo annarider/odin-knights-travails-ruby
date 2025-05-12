@@ -17,10 +17,18 @@ class Board
     @board = Array.new(squares) { Array.new(squares)}
   end
 
-  def valid_moves
-    [[x - 1, y + 2], [x + 1, y + 2],
+  def valid_moves(x, y)
+    positions = [[x - 1, y + 2], [x + 1, y + 2],
      [x + 2, y + 1], [x + 2, y - 1],
      [x + 1, y - 2], [x - 1, y - 2],
      [x - 2, y - 1], [x - 2, y + 1]]
+    results = []
+    positions.filter do |position|
+      if position[0].between?(0, board.length - 1) &&
+         position[1].between?(0, board.length - 1)
+        results << position 
+      end
+    end
+    results
   end
 end
