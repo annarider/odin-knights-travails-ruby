@@ -15,8 +15,8 @@ module TestPathFinder
 
   def self.setup
     @board = Board.new(8)
-    @start = [0, 0]
-    @destination = [7, 7]
+    @start = [3, 3]
+    @destination = [4, 3]
     p @path_finder = PathFinder.new
   end
 
