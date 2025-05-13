@@ -17,11 +17,8 @@ class Board
     @board = Array.new(squares) { Array.new(squares) }
   end
 
-  def valid_moves(x, y)
-    positions = [[x - 1, y + 2], [x + 1, y + 2],
-                 [x + 2, y + 1], [x + 2, y - 1],
-                 [x + 1, y - 2], [x - 1, y - 2],
-                 [x - 2, y - 1], [x - 2, y + 1]]
+  def valid_moves(row, column)
+    positions = knight_moves(row, column)
     results = []
     positions.filter do |position|
       if position[0].between?(0, board.length - 1) &&
@@ -30,5 +27,14 @@ class Board
       end
     end
     results
+  end
+
+  private
+
+  def knight_moves(row, column)
+    [[row - 1, column + 2], [row + 1, column + 2],
+     [row + 2, column + 1], [row + 2, column - 1],
+     [row + 1, column - 2], [row - 1, column - 2],
+     [row - 2, column - 1], [row - 2, column + 1]]
   end
 end
