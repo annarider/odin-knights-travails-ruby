@@ -40,7 +40,7 @@ class PathFinder
       # destination, let's go there first?
 
     end
-    retrace_path(destination)
+    nil
   end
 
   private
