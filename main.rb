@@ -10,11 +10,15 @@ require_relative 'lib/path_finder'
 #
 
 
-def knight_moves(start, end)
+def knight_moves(start, destination)
   board = Board.new(8)
-  knight = Knight.new(start)
-  path_finder = PathFinder.new(board)
-  # puts path_finder.shortest_path(end)
+  path_finder = PathFinder.new
+  path = path_finder.find_path(board, start, destination)
+  puts "You made it in #{path.length - 1} moves! Here's your path:"
+  path.each { |position| p position }
 end
 
 knight_moves([0,0],[1,2]) # answer: [[0,0],[1,2]]
+knight_moves([0,0],[3,3]) # answer: [[0,0],[1,2]]
+knight_moves([3,3],[0,0]) # answer: [[0,0],[1,2]]
+knight_moves([0,0],[7,7]) # answer: [[0,0],[1,2]]
