@@ -15,7 +15,7 @@
 # path = PathFinder.new
 #
 class PathFinder
-  attr_accessor :queue, :visited, :path_history
+  attr_accessor :visited, :path_history
 
   def initialize
     @queue = []
@@ -56,9 +56,11 @@ class PathFinder
   end
 
   def add_moves(board, position)
+    row, column = position
     valid_moves = []
-    board.valid_moves(position[0], position[-1])
-         .filter { |move| valid_moves << move unless visited.include?(move) }
+    board.valid_moves(row, column).each do |move| 
+      valid_moves << move unless visited.include?(move)
+    end
     valid_moves.each { |move| path_history[move] = position }
     valid_moves
   end
