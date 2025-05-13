@@ -33,7 +33,7 @@ class PathFinder
       current = queue.shift
       @visited << current
       path_history[visited[-1]] = visited[-2]
-      queue.concat(board.valid_moves(current[0], current[-1])) 
+      queue.concat(add_moves(board, current)) 
       # TODO: new method that filters out already visited valid moves
       # also need logic where if the valid moves returned contains the 
       # destination, let's go there first?
@@ -53,5 +53,12 @@ class PathFinder
       current = result[0]
     end
     result
+  end
+
+  def add_moves(board, position)
+    valid_moves = []
+    board.valid_moves(position[0], position[-1])
+    .filter { |move| valid_moves << move unless visited.include?(move) }
+    valid_moves
   end
 end
