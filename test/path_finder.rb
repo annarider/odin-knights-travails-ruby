@@ -5,9 +5,9 @@ require_relative '../lib/board'
 require_relative '../lib/knight'
 
 # Test script helps debug the
-# path finder class 
+# path finder class
 # in Knights Travails.
-# 
+#
 module TestPathFinder
   class << self
     attr_accessor :board, :path_finder, :start, :destination

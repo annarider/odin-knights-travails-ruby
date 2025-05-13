@@ -4,7 +4,7 @@ require_relative '../lib/board'
 
 # Board helps debug the chess board
 # in the Knights Travails game.
-# 
+#
 module TestBoard
   class << self
     attr_accessor :board
@@ -19,7 +19,7 @@ module TestBoard
     p board.valid_moves(3, 3)
     p board.valid_moves(0, 0)
     p board.valid_moves(2, 4)
-    p board.valid_moves(7, 7)  
+    p board.valid_moves(7, 7)
     p board.valid_moves(5, 4)
   end
 end

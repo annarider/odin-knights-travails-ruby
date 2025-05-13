@@ -2,7 +2,7 @@
 
 # Knight defines a knight piece
 # in the Knights Travails game.
-# 
+#
 # It tracks the knight's current
 # position.
 #

@@ -4,7 +4,7 @@ require_relative '../lib/knight'
 
 # Knight helps debug the knight
 # piece in Knights Travails.
-# 
+#
 module TestKnight
   class << self
     attr_accessor :knight
@@ -16,6 +16,4 @@ module TestKnight
   end
 end
 
-if __FILE__ == $PROGRAM_NAME
-  puts TestKnight.setup([3,3])
-end
+puts TestKnight.setup([3, 3]) if __FILE__ == $PROGRAM_NAME

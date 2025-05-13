@@ -9,7 +9,6 @@ require_relative 'lib/path_finder'
 # project.
 #
 
-
 def knight_moves(start, destination)
   board = Board.new(8)
   path_finder = PathFinder.new
@@ -18,7 +17,7 @@ def knight_moves(start, destination)
   path.each { |position| p position }
 end
 
-knight_moves([0,0],[1,2]) # answer: [[0,0],[1,2]]
-knight_moves([0,0],[3,3]) # answer: [[0,0],[1,2]]
-knight_moves([3,3],[0,0]) # answer: [[0,0],[1,2]]
-knight_moves([0,0],[7,7]) # answer: [[0,0],[1,2]]
+knight_moves([0, 0], [1, 2]) # answer: [[0,0],[1,2]]
+knight_moves([0, 0], [3, 3]) # answer: [[0,0],[1,2]]
+knight_moves([3, 3], [0, 0]) # answer: [[0,0],[1,2]]
+knight_moves([0, 0], [7, 7]) # answer: [[0,0],[1,2]]
